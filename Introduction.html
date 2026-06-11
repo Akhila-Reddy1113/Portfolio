@@ -9,63 +9,73 @@
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 	<style>
+		/* ── BACKGROUND: deep navy-teal, harmonizes with HTML5 UP Dimension teal ── */
+		body { background-color: #1a2e35 !important; }
+		#bg { background-color: #1a2e35 !important; background-image: none !important; }
+
 		/* ── SKILL BARS ── */
-		.skill-group-title{font-size:.78em;text-transform:uppercase;letter-spacing:2px;color:#64b5f6;margin:1.2rem 0 .5rem;border-bottom:1px solid rgba(100,181,246,.2);padding-bottom:4px;}
-		.skill-wrap{margin:7px 0;}
-		.skill-label-row{display:flex;justify-content:space-between;font-size:.74em;margin-bottom:4px;color:#b0bec5;}
-		.skill-bar{background:rgba(255,255,255,.08);border-radius:4px;height:5px;overflow:hidden;}
-		.skill-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#42a5f5,#1565c0);width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1);}
+		.skill-group-title { font-size:.75em; text-transform:uppercase; letter-spacing:2px; color:#7ecac3; margin:1.2rem 0 .5rem; border-bottom:1px solid rgba(126,202,195,.18); padding-bottom:4px; }
+		.skill-wrap { margin:7px 0; }
+		.skill-label-row { display:flex; justify-content:space-between; font-size:.73em; margin-bottom:4px; color:#a8c8c5; }
+		.skill-bar { background:rgba(255,255,255,.08); border-radius:4px; height:5px; overflow:hidden; }
+		.skill-fill { height:100%; border-radius:4px; background:linear-gradient(90deg,#7ecac3,#3d8f8a); width:0; transition:width 1.5s cubic-bezier(.4,0,.2,1); }
 
 		/* ── STAT CHIPS ── */
-		.stat-row{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0 1.4rem;}
-		.stat-chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:8px 14px;text-align:center;min-width:95px;}
-		.stat-chip .num{font-size:1.3em;font-weight:700;color:#64b5f6;display:block;line-height:1.2;}
-		.stat-chip .lbl{font-size:.62em;color:#90a4ae;text-transform:uppercase;letter-spacing:.8px;}
+		.stat-row { display:flex; flex-wrap:wrap; gap:8px; margin:1rem 0 1.4rem; }
+		.stat-chip { background:rgba(126,202,195,.08); border:1px solid rgba(126,202,195,.2); border-radius:8px; padding:8px 14px; text-align:center; min-width:95px; }
+		.stat-chip .num { font-size:1.3em; font-weight:700; color:#7ecac3; display:block; line-height:1.2; }
+		.stat-chip .lbl { font-size:.6em; color:#7a9e9b; text-transform:uppercase; letter-spacing:.8px; }
 
 		/* ── STACK CHIPS ── */
-		.stack-row{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 0;}
-		.chip{background:rgba(100,181,246,.1);border:1px solid rgba(100,181,246,.25);border-radius:4px;padding:2px 9px;font-size:.7em;color:#90caf9;}
+		.stack-row { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0 0; }
+		.chip { background:rgba(126,202,195,.08); border:1px solid rgba(126,202,195,.22); border-radius:4px; padding:2px 9px; font-size:.68em; color:#9dd4cf; }
 
 		/* ── WORK CARDS ── */
-		.work-card{background:rgba(255,255,255,.04);border-radius:8px;padding:1.1rem 1.2rem;margin-bottom:1.1rem;border-left:3px solid #1e88e5;}
-		.work-card h4{color:#64b5f6;font-size:.88em;margin:0 0 3px;}
-		.work-card .dates{font-size:.7em;color:#78909c;margin-bottom:8px;}
-		.work-card p{font-size:.8em;color:#cfd8dc;line-height:1.75;margin-bottom:0;}
+		.work-card { background:rgba(255,255,255,.03); border-radius:8px; padding:1.1rem 1.2rem; margin-bottom:1.2rem; border-left:3px solid rgba(126,202,195,.6); }
+		.work-card h4 { color:#7ecac3; font-size:.9em; margin:0 0 2px; }
+		.work-card .dates { font-size:.68em; color:#6a9490; margin-bottom:10px; }
+		.work-subhead { font-size:.72em; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:#7ecac3; margin:12px 0 6px; opacity:.8; }
+		.work-card ul { margin:0 0 6px; padding-left:1.1rem; }
+		.work-card ul li { font-size:.78em; color:#c8dedd; line-height:1.8; margin-bottom:3px; }
+		.work-card ul li strong { color:#e8f4f3; }
+		.work-stack { font-size:.68em; color:#6a9490; margin-top:10px; font-style:italic; }
 
 		/* ── PROJECT CARDS ── */
-		.proj-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:1.2rem;margin-bottom:1.1rem;}
-		.proj-card h3{color:#64b5f6;font-size:.92em;margin:0 0 3px;}
-		.proj-card h5{color:#78909c;font-size:.72em;font-weight:400;margin:0 0 9px;}
-		.proj-card p{font-size:.8em;color:#cfd8dc;line-height:1.75;margin-bottom:0;}
-		.proj-metrics{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0;}
-		.proj-metric{background:rgba(76,175,80,.12);border:1px solid rgba(76,175,80,.28);border-radius:4px;padding:2px 8px;font-size:.68em;color:#a5d6a7;font-weight:600;}
-		.proj-link{display:inline-flex;align-items:center;gap:5px;color:#42a5f5;font-size:.78em;text-decoration:none;margin-top:8px;}
-		.proj-link:hover{color:#90caf9;}
+		.proj-card { background:rgba(255,255,255,.03); border:1px solid rgba(126,202,195,.15); border-radius:10px; padding:1.2rem; margin-bottom:1.1rem; }
+		.proj-card h3 { color:#7ecac3; font-size:.9em; margin:0 0 2px; }
+		.proj-card h5 { color:#6a9490; font-size:.7em; font-weight:400; margin:0 0 9px; font-style:italic; }
+		.proj-card ul { margin:0; padding-left:1.1rem; }
+		.proj-card ul li { font-size:.78em; color:#c8dedd; line-height:1.8; }
+		.proj-card ul li strong { color:#e8f4f3; }
+		.proj-metrics { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0; }
+		.proj-metric { background:rgba(62,160,100,.12); border:1px solid rgba(62,160,100,.28); border-radius:4px; padding:2px 8px; font-size:.66em; color:#9ecfb0; font-weight:600; }
+		.proj-link { display:inline-flex; align-items:center; gap:5px; color:#7ecac3; font-size:.76em; text-decoration:none; margin-top:8px; }
+		.proj-link:hover { color:#b3e0dc; }
 
 		/* ── CERT CARDS ── */
-		.cert-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:8px;padding:.9rem 1rem;margin-bottom:.7rem;display:flex;align-items:center;gap:13px;text-decoration:none;transition:background .2s,border-color .2s;}
-		.cert-card:hover{background:rgba(100,181,246,.08);border-color:rgba(100,181,246,.3);}
-		.cert-icon{width:34px;height:34px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;}
-		.cert-name{color:#e0e0e0;font-size:.82em;font-weight:600;}
-		.cert-issuer{color:#78909c;font-size:.68em;margin-top:2px;}
+		.cert-card { background:rgba(255,255,255,.03); border:1px solid rgba(126,202,195,.15); border-radius:8px; padding:.9rem 1rem; margin-bottom:.7rem; display:flex; align-items:center; gap:13px; text-decoration:none; transition:background .2s,border-color .2s; }
+		.cert-card:hover { background:rgba(126,202,195,.08); border-color:rgba(126,202,195,.35); }
+		.cert-icon { width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:16px; }
+		.cert-name { color:#d8eeed; font-size:.82em; font-weight:600; }
+		.cert-issuer { color:#6a9490; font-size:.68em; margin-top:2px; }
 
 		/* ── EDU CARDS ── */
-		.edu-card{background:rgba(255,255,255,.04);border-left:3px solid #42a5f5;border-radius:0 8px 8px 0;padding:.9rem 1.1rem;margin-bottom:.9rem;}
-		.edu-card .deg{font-size:.92em;font-weight:600;color:#e0e0e0;}
-		.edu-card .uni{font-size:.78em;color:#64b5f6;margin-top:3px;}
-		.edu-card .year{font-size:.68em;color:#78909c;margin-top:2px;}
-		.edu-card .courses{font-size:.72em;color:#90a4ae;margin-top:6px;line-height:1.7;}
-		.edu-badge{display:inline-block;background:rgba(100,181,246,.15);border:1px solid rgba(100,181,246,.3);border-radius:4px;padding:1px 7px;font-size:.62em;color:#90caf9;margin-left:7px;vertical-align:middle;}
+		.edu-card { background:rgba(255,255,255,.03); border-left:3px solid rgba(126,202,195,.55); border-radius:0 8px 8px 0; padding:.9rem 1.1rem; margin-bottom:.9rem; }
+		.edu-card .deg { font-size:.9em; font-weight:600; color:#d8eeed; }
+		.edu-card .uni { font-size:.76em; color:#7ecac3; margin-top:3px; }
+		.edu-card .year { font-size:.67em; color:#6a9490; margin-top:2px; }
+		.edu-card .courses { font-size:.71em; color:#8ab0ad; margin-top:6px; line-height:1.75; }
+		.edu-badge { display:inline-block; background:rgba(126,202,195,.14); border:1px solid rgba(126,202,195,.28); border-radius:4px; padding:1px 7px; font-size:.6em; color:#9dd4cf; margin-left:7px; vertical-align:middle; }
 
-		/* ── CONTACT ── */
-		.contact-row{font-size:.84em;color:#b0bec5;margin-bottom:.5rem;}
-		.contact-row i{color:#64b5f6;width:20px;margin-right:6px;}
+		/* ── CONTACT ROW ── */
+		.contact-row { font-size:.83em; color:#a8c8c5; margin-bottom:.55rem; }
+		.contact-row i { color:#7ecac3; width:20px; margin-right:6px; }
 
 		/* ── SECTION DIVIDER ── */
-		.sec-div{border:none;border-top:1px solid rgba(255,255,255,.07);margin:1.2rem 0;}
+		.sec-div { border:none; border-top:1px solid rgba(126,202,195,.1); margin:1.1rem 0; }
 
-		/* ── IMAGE OVERRIDE ── */
-		.image.main img{max-height:210px;object-fit:cover;border-radius:8px;}
+		/* ── IMAGE HEIGHT ── */
+		.image.main img { max-height:200px; object-fit:cover; border-radius:8px; opacity:.85; }
 	</style>
 </head>
 <body class="">
@@ -78,7 +88,7 @@
 		<div class="inner">
 			<h1>Akhila Reddy</h1>
 			<p>Data Scientist &nbsp;·&nbsp; Analytics Engineer &nbsp;·&nbsp; BI Developer<br>
-			<span style="font-size:.78em;color:#90caf9;">Python · SQL · Power BI · Azure · Snowflake · ML · Alteryx</span></p>
+			<span style="font-size:.78em;opacity:.75;">Python · SQL · Power BI · Azure · Snowflake · ML · Alteryx</span></p>
 		</div>
 	</div>
 	<nav class="use-middle">
@@ -100,9 +110,9 @@
 <!-- ─────────── ABOUT ─────────── -->
 <article id="intro" style="display:none;">
 	<h2 class="major">About Me</h2>
-	<!-- Data analytics / dashboard hero image -->
+	<!-- Dark analytics dashboard — navy tones harmonize with background -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&q=80" alt="Data analytics dashboard">
+		<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&q=75" alt="Data analytics dashboard">
 	</span>
 
 	<div class="stat-row">
@@ -114,11 +124,11 @@
 		<div class="stat-chip"><span class="num">180K+</span><span class="lbl">Records Analyzed</span></div>
 	</div>
 
-	<p align="justify">I'm <strong>Akhila Reddy</strong>, a Data Scientist and Analytics Engineer with 6+ years building end-to-end data systems — from raw ingestion and ETL through ML modeling, analytics engineering, and executive dashboards across <strong>aviation, automotive, insurance, and healthcare</strong>.</p>
+	<p align="justify">I'm <strong>Akhila Reddy</strong>, a Data Scientist and Analytics Engineer with 6+ years building production ML systems, large-scale ETL pipelines, and executive-facing analytics across aviation, automotive, insurance, and healthcare.</p>
 
-	<p align="justify">Currently an <strong>Accounting Automation Analyst at American Airlines</strong> and enrolled in a <strong>Doctorate of Business Administration (Business Intelligence & Analytics) at Belhaven University</strong> starting June 2026.</p>
+	<p align="justify">Strong foundation in Python (Scikit-learn, XGBoost, TensorFlow), SQL, and cloud data engineering (Azure, AWS, Snowflake). Proven ability to take projects end-to-end — from raw data and exploratory analysis through model development, pipeline engineering, and stakeholder-ready dashboards. Equally strong on the engineering and science side: comfortable building scalable data systems and deploying ML models that run in production, not just notebooks.</p>
 
-	<p align="justify">I hold an <strong>MS in Engineering Data Science from the University of Houston</strong> and am certified in Power BI (PL-300), Alteryx Designer Core & Cloud, Tableau, Google Data Analytics, and Six Sigma Black Belt.</p>
+	<p align="justify">Currently an <strong>Accounting Automation Analyst at American Airlines</strong> and enrolled in a <strong>Doctorate of Business Administration in Business Intelligence & Analytics at Belhaven University</strong>, starting June 2026.</p>
 
 	<div class="stack-row">
 		<span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span>
@@ -126,17 +136,17 @@
 		<span class="chip">XGBoost</span><span class="chip">TensorFlow</span><span class="chip">PySpark</span>
 		<span class="chip">Kafka</span><span class="chip">dbt</span><span class="chip">SAP</span>
 		<span class="chip">Workday</span><span class="chip">Coupa</span><span class="chip">Tableau</span>
+		<span class="chip">MLflow</span><span class="chip">LangChain</span><span class="chip">RAG</span>
 	</div>
-
 	<div class="close">Close</div>
 </article>
 
 <!-- ─────────── EDUCATION ─────────── -->
 <article id="education" style="display:none;">
 	<h2 class="major">Education</h2>
-	<!-- University campus / academic themed -->
+	<!-- Aerial campus / architecture — dark tones -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=900&auto=format&q=80" alt="University of Houston campus">
+		<img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&auto=format&q=75" alt="University campus at night representing academic achievement">
 	</span>
 
 	<div class="edu-card">
@@ -150,7 +160,7 @@
 		<div class="deg">Master of Science, Engineering Data Science</div>
 		<div class="uni">University of Houston, TX</div>
 		<div class="year">January 2022 – May 2023</div>
-		<div class="courses">Machine Learning &nbsp;·&nbsp; Big Data Analytics &nbsp;·&nbsp; Probability &amp; Statistics &nbsp;·&nbsp; Information Visualization &nbsp;·&nbsp; Cybersecurity Data Analytics &nbsp;·&nbsp; Data Analytics in Engineering</div>
+		<div class="courses">Machine Learning &nbsp;·&nbsp; AI &nbsp;·&nbsp; Big Data Analytics &nbsp;·&nbsp; Probability &amp; Statistics &nbsp;·&nbsp; Information Visualization &nbsp;·&nbsp; Cybersecurity Data Analytics &nbsp;·&nbsp; Data Analytics in Engineering</div>
 	</div>
 
 	<div class="edu-card">
@@ -158,112 +168,140 @@
 		<div class="uni">JNTU Hyderabad, India</div>
 		<div class="year">2016 – 2020</div>
 	</div>
-
 	<div class="close">Close</div>
 </article>
 
 <!-- ─────────── EXPERIENCE ─────────── -->
 <article id="work" style="display:none;">
 	<h2 class="major">Experience</h2>
-	<!-- Aviation / American Airlines themed -->
+	<!-- Aircraft on tarmac — dark sky background harmonizes -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&auto=format&q=80" alt="American Airlines aircraft representing aviation industry experience">
+		<img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=900&auto=format&q=75" alt="Aircraft on tarmac representing American Airlines aviation industry experience">
 	</span>
 
+	<!-- AMERICAN AIRLINES -->
 	<div class="work-card">
-		<h4><i class="fas fa-plane" style="margin-right:7px;"></i>Data Scientist &amp; Accounting Automation Analyst</h4>
+		<h4><i class="fas fa-plane" style="margin-right:7px;opacity:.8;"></i>Data Scientist &amp; Accounting Automation Analyst</h4>
 		<div class="dates">American Airlines &nbsp;·&nbsp; DFW, Texas &nbsp;·&nbsp; Apr 2024 – Present</div>
-		<p>Designed 12+ Alteryx ETL pipelines automating AR, collections, and journal entry workflows — <strong>60% reduction</strong> in manual processing time. Built Power BI executive dashboards (DAX, RLS, Composite Models, Paginated Reports) for C-suite and finance leadership. Identified Coupa-to-SAP data mapping discrepancy across 50+ GL categories reducing reconciliation errors by <strong>35%</strong>. Built Azure Data Factory pipelines integrating SAP, Workday, Coupa, and Cadency. Led SOX ITGC and BPGC audit coordination; authored SOPs, BRDs, and process documentation. Conducted UAT for Power Apps forms and automated workflows.</p>
-		<div class="stack-row">
-			<span class="chip">Alteryx</span><span class="chip">Power BI</span><span class="chip">Azure ADF</span>
-			<span class="chip">SQL Server</span><span class="chip">SAP</span><span class="chip">Workday</span>
-			<span class="chip">Coupa</span><span class="chip">Power Automate</span><span class="chip">Teradata</span><span class="chip">Cadency</span>
-		</div>
+
+		<div class="work-subhead">Data Engineering &amp; ETL</div>
+		<ul>
+			<li><strong>Designed 12+ Alteryx ETL workflows</strong> automating AR/collections reporting, journal entry reconciliation, and audit preparation — eliminating 30+ hours of manual processing per month (<strong>60% reduction</strong>).</li>
+			<li><strong>Built Azure Data Factory pipelines</strong> orchestrating data movement across SAP, Workday, Coupa, and Cadency into a unified data architecture; implemented Power Automate flows reducing manual email handling by 60%.</li>
+			<li><strong>Developed Python ETL scripts</strong> for data preprocessing, feature engineering, and automated pipeline workflows feeding Teradata outputs into ML models and Power BI dashboards.</li>
+		</ul>
+
+		<div class="work-subhead">Analytics &amp; Stakeholder Reporting</div>
+		<ul>
+			<li><strong>Built Power BI executive dashboards</strong> (DAX, M Code, RLS, Composite Models) tracking GL reconciliation rates, automation coverage, and data quality KPIs — consumed by C-suite and finance leadership.</li>
+			<li><strong>Conducted EDA and root cause analysis</strong> across large-scale financial datasets — identified systemic Coupa-to-SAP mapping discrepancy across 50+ GL categories, reducing reconciliation errors by <strong>35%</strong>.</li>
+			<li><strong>Applied hypothesis testing and statistical analysis</strong> to validate automation outcomes and pipeline outputs against business logic tolerance thresholds.</li>
+			<li><strong>Led SOX ITGC and BPGC control testing</strong> in collaboration with internal audit teams; produced BRDs, FRDs, and process flow documentation for accounting automation initiatives.</li>
+		</ul>
+		<div class="work-stack">Stack: Python · XGBoost · Scikit-learn · MLflow · Alteryx · ADF · SQL Server · Power BI · Power Automate · SAP · Workday · Coupa · Cadency · Teradata · JIRA</div>
 	</div>
 
+	<!-- FORD -->
 	<div class="work-card">
-		<h4><i class="fas fa-car" style="margin-right:7px;"></i>Business Data Scientist</h4>
+		<h4><i class="fas fa-car" style="margin-right:7px;opacity:.8;"></i>Business Data Scientist</h4>
 		<div class="dates">Ford Motor Company &nbsp;·&nbsp; Dearborn, Michigan &nbsp;·&nbsp; Mar 2023 – Mar 2024</div>
-		<p>Deployed real-time risk scoring models (Random Forest, XGBoost) improving operational efficiency by <strong>30%</strong>. Boosted supply chain forecast accuracy by <strong>25%</strong> using Snowflake + Kafka streaming pipelines with ensemble ML on AWS data lakes. Built time-series demand forecasting (ARIMA, Prophet) reducing excess inventory by <strong>15%</strong>. Processed large-scale datasets with PySpark on AWS EMR. Ran A/B and multivariate tests using Adobe Target — informing product roadmap decisions with statistical significance testing.</p>
-		<div class="stack-row">
-			<span class="chip">Python</span><span class="chip">XGBoost</span><span class="chip">Snowflake</span>
-			<span class="chip">Kafka</span><span class="chip">PySpark</span><span class="chip">AWS</span>
-			<span class="chip">Power BI</span><span class="chip">R</span><span class="chip">Teradata</span><span class="chip">Adobe Analytics</span>
-		</div>
+
+		<div class="work-subhead">ML Model Development &amp; Production Deployment</div>
+		<ul>
+			<li><strong>Developed and deployed real-time risk scoring models</strong> using Python (Random Forest, XGBoost) integrated with Power Apps frontend and Teradata backend — improving operational efficiency by <strong>30%</strong>; evaluated with F1-score and cross-validation.</li>
+			<li><strong>Built time-series demand forecasting models in R</strong> reducing excess inventory by <strong>15%</strong> through accurate predictive supply chain planning; applied ARIMA and Prophet with lag features and rolling aggregations.</li>
+			<li><strong>Boosted supply chain forecast accuracy by 25%</strong> by integrating Snowflake and Kafka streaming pipelines with ensemble ML models on AWS data lakes — real-time analytics at scale.</li>
+			<li><strong>Applied feature engineering across high-cardinality manufacturing datasets</strong> — encoding, lag features, interaction terms, and PCA dimensionality reduction to optimize model performance.</li>
+		</ul>
+
+		<div class="work-subhead">Data Engineering &amp; Cloud</div>
+		<ul>
+			<li><strong>Migrated legacy data workflows to AWS cloud</strong> using S3, Lambda, EC2, and Glue — optimizing pipeline performance and scalability for manufacturing and supply chain analytics.</li>
+			<li><strong>Processed large-scale datasets using Apache Spark and PySpark</strong> on AWS EMR and Snowflake — directly applicable to distributed ML training and feature computation at scale.</li>
+			<li><strong>Used Kafka for real-time data ingestion</strong> integrating streaming pipelines with AWS data lakes for sub-second analytics on manufacturing sensor data.</li>
+		</ul>
+
+		<div class="work-subhead">EDA, Statistics &amp; Experimentation</div>
+		<ul>
+			<li><strong>Performed EDA on manufacturing, supply chain, and customer datasets</strong> — profiling distributions, detecting outliers, validating feature relationships, and isolating root drivers of supply chain disruptions.</li>
+			<li><strong>Designed and executed A/B and multivariate tests</strong> using Adobe Target with statistical significance testing — informing product roadmap decisions with experiment-driven evidence.</li>
+			<li><strong>Applied ANOVA, T-test, F-test, and Chi-Square</strong> to validate business assumptions across automotive engineering and marketing decisions.</li>
+		</ul>
+		<div class="work-stack">Stack: Python · XGBoost · R · Scikit-learn · Snowflake · Kafka · Spark · PySpark · AWS (S3/Glue/Lambda/EMR) · ADF · Power BI · Adobe Analytics · Teradata · JIRA</div>
 	</div>
 
+	<!-- BROWN & BROWN -->
 	<div class="work-card">
-		<h4><i class="fas fa-shield-alt" style="margin-right:7px;"></i>Financial Data Scientist</h4>
+		<h4><i class="fas fa-shield-alt" style="margin-right:7px;opacity:.8;"></i>Financial Data Scientist</h4>
 		<div class="dates">Brown &amp; Brown Insurance &nbsp;·&nbsp; Daytona Beach, FL &nbsp;·&nbsp; Jan 2022 – Feb 2023</div>
-		<p>Built XGBoost and Random Forest fraud detection models on P&amp;C insurance claims — <strong>30% accuracy improvement</strong> via SMOTE class balancing, feature selection, and threshold optimization; AUC-ROC 0.91. Deployed Azure ML models with experiment tracking, model registration, and production scoring endpoints. Built Python &amp; SQL ETL pipelines from Oracle and Teradata — <strong>30% processing time reduction</strong>. Applied Hadoop (HDFS, Hive, MapReduce) for large-scale dataset processing.</p>
-		<div class="stack-row">
-			<span class="chip">XGBoost</span><span class="chip">Azure ML</span><span class="chip">Python</span>
-			<span class="chip">Oracle 19c</span><span class="chip">Tableau</span><span class="chip">Power BI</span>
-			<span class="chip">AWS</span><span class="chip">Hadoop</span><span class="chip">SMOTE</span>
-		</div>
+
+		<div class="work-subhead">Fraud Detection &amp; Predictive Modeling</div>
+		<ul>
+			<li><strong>Built XGBoost and Random Forest fraud detection models</strong> on P&amp;C insurance claims — improving detection accuracy by <strong>30%</strong> through SMOTE class balancing, feature selection, and threshold optimization; evaluated with AUC-ROC (0.91) and KS statistic.</li>
+			<li><strong>Developed Azure ML models</strong> for fraud detection with experiment tracking, model registration, and deployment to scoring endpoints — production ML lifecycle experience.</li>
+			<li><strong>Built predictive risk models in R</strong> (logistic regression, time-series) forecasting claim trends and policyholder risk — evaluated with precision-recall curves and Kolmogorov-Smirnov statistics.</li>
+		</ul>
+
+		<div class="work-subhead">Data Engineering &amp; Analytics</div>
+		<ul>
+			<li><strong>Built Python and SQL ETL pipelines</strong> for claims data ingestion and transformation from Oracle and Teradata — reducing processing time by <strong>30%</strong>.</li>
+			<li><strong>Applied Hadoop frameworks (HDFS, Hive, YARN, MapReduce)</strong> for large-scale insurance dataset processing at enterprise data volumes.</li>
+			<li><strong>Developed Tableau and Power BI dashboards</strong> tracking claims KPIs, fraud indicators, and compliance metrics for underwriting and executive stakeholders.</li>
+		</ul>
+		<div class="work-stack">Stack: Python · XGBoost · Scikit-learn · SMOTE · Azure ML · R · Oracle 19c · Teradata · AWS (S3/Glue/Redshift) · Hadoop · Tableau · Power BI · JIRA</div>
 	</div>
 
+	<!-- COLLABGENICS -->
 	<div class="work-card">
-		<h4><i class="fas fa-chart-bar" style="margin-right:7px;"></i>Data Analyst</h4>
+		<h4><i class="fas fa-chart-bar" style="margin-right:7px;opacity:.8;"></i>Data Analyst</h4>
 		<div class="dates">Collabgenics &nbsp;·&nbsp; Hyderabad, India &nbsp;·&nbsp; Mar 2020 – Dec 2021</div>
-		<p>Built Python and SQL ETL pipelines automating data extraction and transformation — <strong>30% reduction</strong> in processing time. Developed Power BI and Tableau dashboards communicating marketing KPIs to business stakeholders. Delivered competitor benchmarking analysis contributing to <strong>12% market share growth</strong>. Developed SQL queries for large-scale data extraction across SQL Server and DB2.</p>
-		<div class="stack-row">
-			<span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span>
-			<span class="chip">Tableau</span><span class="chip">Alteryx</span><span class="chip">Excel</span><span class="chip">AWS S3</span>
-		</div>
+		<ul>
+			<li><strong>Built Python and SQL ETL pipelines</strong> automating data ingestion and transformation — reducing processing time by <strong>30%</strong>; delivered downstream ML model training datasets.</li>
+			<li><strong>Performed EDA and customer segmentation analysis</strong> on marketing and CRM datasets — communicating findings through Tableau dashboards to business stakeholders.</li>
+			<li><strong>Developed and optimized SQL queries</strong> for large-scale data extraction and transformation across SQL Server and DB2.</li>
+		</ul>
+		<div class="work-stack">Stack: Python · SQL · Scikit-learn · Tableau · Power BI · Alteryx · AWS S3 · SSIS</div>
 	</div>
-
-	<div class="work-card">
-		<h4><i class="fas fa-seedling" style="margin-right:7px;"></i>Data Analyst Intern</h4>
-		<div class="dates">Collabgenics &nbsp;·&nbsp; Hyderabad, India &nbsp;·&nbsp; Jan 2019 – Feb 2020</div>
-		<p>Demonstrated advanced skills in Excel (pivot tables, VLOOKUPs) and SQL for data extraction and analysis. Optimized queries, maintained data entry logs, and contributed to Power BI data models and report creation practices.</p>
-		<div class="stack-row">
-			<span class="chip">SQL</span><span class="chip">Excel</span><span class="chip">Power BI</span><span class="chip">Google Sheets</span>
-		</div>
-	</div>
-
 	<div class="close">Close</div>
 </article>
 
 <!-- ─────────── SKILLS ─────────── -->
 <article id="skills" style="display:none;">
 	<h2 class="major">Skills</h2>
-	<!-- Dark code / programming screen -->
+	<!-- Dark code screen — deep navy matches background perfectly -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=900&auto=format&q=80" alt="Programming code on dark screen representing technical skills">
+		<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=900&auto=format&q=75" alt="Programming code on dark screen representing technical skills">
 	</span>
 
-	<div class="skill-group-title">Machine Learning &amp; Data Science</div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Python (Scikit-learn, XGBoost, TensorFlow, PyTorch)</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>ML — Classification, Regression, Clustering, Time-Series</span><span>87%</span></div><div class="skill-bar"><div class="skill-fill" data-w="87"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Computer Vision (ResNet-50, OpenCV, Transfer Learning)</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Feature Engineering &amp; Model Evaluation (AUC, F1, RMSE)</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Statistical Analysis &amp; A/B Testing</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+	<div class="skill-group-title">Languages &amp; ML / AI</div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Python (Pandas, NumPy, Scikit-learn, XGBoost, TensorFlow, PyTorch, SHAP, MLflow)</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>ML — Classification, Regression, Clustering (KMeans, DBSCAN), Time-Series (ARIMA, Prophet)</span><span>87%</span></div><div class="skill-bar"><div class="skill-fill" data-w="87"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Computer Vision (ResNet-50, OpenCV, Transfer Learning)</span><span>82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>NLP · RAG · LLM Integration (OpenAI API, HuggingFace, LangChain)</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Feature Engineering · Model Evaluation (AUC-ROC, F1, RMSE, Silhouette) · A/B Testing</span><span>87%</span></div><div class="skill-bar"><div class="skill-fill" data-w="87"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>R · SQL (T-SQL, PL/SQL) · Scala</span><span>82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
 
 	<hr class="sec-div">
-
 	<div class="skill-group-title">Data Engineering &amp; Cloud</div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>SQL (T-SQL, Snowflake, Teradata, Oracle, BigQuery)</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>SQL Server · Snowflake · Teradata · Oracle 19c · BigQuery · Redshift · MySQL</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
 	<div class="skill-wrap"><div class="skill-label-row"><span>Alteryx Designer &amp; Server</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" data-w="92"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Azure (ADF, Synapse, Databricks, ADLS)</span><span>82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Azure (ADF, Databricks/PySpark, Synapse, ADLS)</span><span>83%</span></div><div class="skill-bar"><div class="skill-fill" data-w="83"></div></div></div>
 	<div class="skill-wrap"><div class="skill-label-row"><span>AWS (S3, Glue, Lambda, EMR, Redshift)</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Apache Spark / PySpark / Kafka</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Apache Spark · PySpark · Kafka · dbt · Medallion Architecture · SSIS</span><span>80%</span></div><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Hive · HBase · HDFS · Hadoop</span><span>75%</span></div><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div></div>
 
 	<hr class="sec-div">
-
 	<div class="skill-group-title">BI &amp; Visualization</div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Power BI (DAX, M Code, RLS, Composite Models, Paginated)</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Tableau</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Power BI (DAX, M Code, RLS, Composite Models, Paginated Reports)</span><span>95%</span></div><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Tableau (live ML dashboards)</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></div>
 	<div class="skill-wrap"><div class="skill-label-row"><span>Advanced Excel &amp; Power Query (M Code)</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>SSRS / Cognos / Looker</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Cognos · SSRS · Looker · Google Analytics</span><span>78%</span></div><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
 
 	<hr class="sec-div">
-
-	<div class="skill-group-title">Enterprise Systems &amp; Tools</div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>SAP / Workday / Coupa / Cadency</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>Power Automate &amp; Power Apps</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>SharePoint &amp; Teams</span><span>82%</span></div><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
-	<div class="skill-wrap"><div class="skill-label-row"><span>JIRA / Confluence / Agile / GitHub</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+	<div class="skill-group-title">Enterprise Systems &amp; MLOps</div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>SAP (ECC, FS-RI, FS-CD) · Workday · Coupa · Cadency</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>Power Automate · Power Apps · SharePoint</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+	<div class="skill-wrap"><div class="skill-label-row"><span>MLflow · Docker · GitHub · JIRA · Confluence · Agile/Scrum</span><span>83%</span></div><div class="skill-bar"><div class="skill-fill" data-w="83"></div></div></div>
 
 	<div class="close">Close</div>
 </article>
@@ -271,67 +309,67 @@
 <!-- ─────────── PROJECTS ─────────── -->
 <article id="projects" style="display:none;">
 	<h2 class="major">Projects</h2>
-	<!-- AI / neural network / ML themed -->
+	<!-- Abstract neural network / deep space — dark navy harmonizes -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=900&auto=format&q=80" alt="AI neural network visualization representing machine learning projects">
+		<img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=900&auto=format&q=75" alt="Neural network AI visualization representing machine learning projects">
 	</span>
 
+	<!-- CUSTOMER SEGMENTATION -->
 	<div class="proj-card">
-		<h3><i class="fas fa-users" style="margin-right:7px;"></i>Customer Segmentation — Large-Scale E-Commerce</h3>
-		<h5>Python &nbsp;·&nbsp; KMeans &nbsp;·&nbsp; RFM Features &nbsp;·&nbsp; Scikit-learn &nbsp;·&nbsp; Tableau</h5>
-		<p>End-to-end EDA and clustering pipeline on millions of real e-commerce transaction records. Engineered RFM (Recency, Frequency, Monetary) features, applied StandardScaler normalization, KMeans with Elbow + Silhouette Score optimization. Identified 4 actionable customer segments (High-Value Loyal, At-Risk, New/Occasional, Low-Value) driving targeted retention strategies. Built interactive Tableau dashboard on ML outputs — KPI cards, segment behavior charts, spend vs frequency visuals.</p>
+		<h3><i class="fas fa-users" style="margin-right:7px;opacity:.8;"></i>Customer Segmentation — Large-Scale E-Commerce</h3>
+		<h5>Python &nbsp;·&nbsp; KMeans &nbsp;·&nbsp; RFM &nbsp;·&nbsp; Scikit-learn &nbsp;·&nbsp; Tableau</h5>
+		<ul>
+			<li><strong>Built end-to-end EDA + clustering pipeline</strong> on millions of real transaction records — engineered RFM features, applied StandardScaler normalization, KMeans with Elbow + Silhouette optimization; identified <strong>4 actionable segments</strong> driving retention strategy. Live Tableau dashboard on ML outputs.</li>
+		</ul>
 		<div class="proj-metrics">
 			<span class="proj-metric">4 segments identified</span>
 			<span class="proj-metric">Millions of records</span>
 			<span class="proj-metric">Live Tableau dashboard</span>
 		</div>
-		<div class="stack-row" style="margin-bottom:8px;">
-			<span class="chip">Python</span><span class="chip">KMeans</span><span class="chip">Scikit-learn</span><span class="chip">RFM</span><span class="chip">StandardScaler</span><span class="chip">Tableau</span>
-		</div>
 		<a class="proj-link" href="https://github.com/Akhila-Reddy1113/customer-segmentation" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
 	</div>
 
+	<!-- GLOBAL TERRORISM -->
 	<div class="proj-card">
-		<h3><i class="fas fa-globe" style="margin-right:7px;"></i>Global Terrorism Pattern Analysis</h3>
-		<h5>Python &nbsp;·&nbsp; Neural Networks &nbsp;·&nbsp; Decision Tree &nbsp;·&nbsp; SVM &nbsp;·&nbsp; Tableau</h5>
-		<p>Large-scale EDA on 180,000+ terrorism incidents across 47 years (1970–2017). Root cause analysis on attack success drivers — attack type, region, target, weapon. Trained Neural Network achieving <strong>97% accuracy</strong>, Decision Tree 90%, SVM 85%. Cross-validation, confusion matrix, and feature importance analysis. Geospatial security intelligence dashboards mapping global patterns and temporal trends.</p>
+		<h3><i class="fas fa-globe" style="margin-right:7px;opacity:.8;"></i>Global Terrorism Pattern Analysis</h3>
+		<h5>Python &nbsp;·&nbsp; Neural Networks &nbsp;·&nbsp; Decision Tree &nbsp;·&nbsp; Scikit-learn &nbsp;·&nbsp; Tableau</h5>
+		<ul>
+			<li><strong>Large-scale EDA on 180,000+ incidents across 47 years</strong> — RCA on attack success drivers; Neural Network <strong>97% accuracy</strong>, Decision Tree 90%; cross-validation, confusion matrix, feature importance. Geospatial security intelligence dashboards.</li>
+		</ul>
 		<div class="proj-metrics">
 			<span class="proj-metric">97% Neural Network accuracy</span>
 			<span class="proj-metric">180,000+ incidents</span>
 			<span class="proj-metric">47 years of data</span>
 		</div>
-		<div class="stack-row" style="margin-bottom:8px;">
-			<span class="chip">Python</span><span class="chip">Neural Networks</span><span class="chip">Decision Tree</span><span class="chip">SVM</span><span class="chip">Tableau</span><span class="chip">Scikit-learn</span>
-		</div>
 		<a class="proj-link" href="https://github.com/Akhila-Reddy1113/Data-Analyst-projects/tree/main/Global%20Terrorism%20data" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
 	</div>
 
+	<!-- ROADSIDE VEGETATION -->
 	<div class="proj-card">
-		<h3><i class="fas fa-car" style="margin-right:7px;"></i>Roadside Vegetation Detection (Computer Vision)</h3>
+		<h3><i class="fas fa-car" style="margin-right:7px;opacity:.8;"></i>Roadside Vegetation Detection (Computer Vision)</h3>
 		<h5>Python &nbsp;·&nbsp; TensorFlow &nbsp;·&nbsp; ResNet-50 &nbsp;·&nbsp; OpenCV &nbsp;·&nbsp; Transfer Learning</h5>
-		<p>Fine-tuned ResNet-50 on the MIT DriveSeg dashcam dataset for autonomous driving safety applications. Full ML lifecycle: data augmentation, transfer learning, layer freezing, learning rate scheduling, production inference pipeline. Achieved <strong>84.87% precision</strong> and <strong>91.54% recall</strong> — contributing to vegetation perception in dynamic driving scenes.</p>
+		<ul>
+			<li><strong>Fine-tuned ResNet-50 on MIT DriveSeg dashcam dataset</strong> — <strong>84.87% precision, 91.54% recall</strong>; full ML lifecycle: data augmentation, transfer learning, layer freezing, learning rate scheduling, production inference pipeline.</li>
+		</ul>
 		<div class="proj-metrics">
 			<span class="proj-metric">84.87% precision</span>
 			<span class="proj-metric">91.54% recall</span>
 			<span class="proj-metric">MIT DriveSeg dataset</span>
 		</div>
-		<div class="stack-row" style="margin-bottom:8px;">
-			<span class="chip">TensorFlow</span><span class="chip">ResNet-50</span><span class="chip">OpenCV</span><span class="chip">Transfer Learning</span><span class="chip">Python</span>
-		</div>
 		<a class="proj-link" href="https://github.com/Akhila-Reddy1113/Data-Analyst-projects/tree/main/Roadside%20Vegetation%20Detection%20through%20Dashcam" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
 	</div>
 
+	<!-- TV NEWS -->
 	<div class="proj-card">
-		<h3><i class="fas fa-tv" style="margin-right:7px;"></i>TV News Commercial Detection</h3>
+		<h3><i class="fas fa-tv" style="margin-right:7px;opacity:.8;"></i>TV News Commercial Detection</h3>
 		<h5>Python &nbsp;·&nbsp; SVM &nbsp;·&nbsp; Random Forest &nbsp;·&nbsp; PCA &nbsp;·&nbsp; Lasso &nbsp;·&nbsp; GridSearchCV</h5>
-		<p>Binary classification pipeline across 150+ hours of broadcast news data (UCI ML repository). Features: Motion distribution, Edge change ratio. PCA dimensionality reduction and Lasso feature selection — significantly reduced feature set while maintaining accuracy. GridSearchCV hyperparameter tuning across SVM, Random Forest, and Deep Learning. K-means clustering with Kernel PCA visualization. Ensemble modeling achieving <strong>85% accuracy</strong>.</p>
+		<ul>
+			<li><strong>Binary classification across 150+ hours of broadcast data</strong> — PCA dimensionality reduction, Lasso feature selection, GridSearchCV hyperparameter tuning; SVM and Random Forest achieving <strong>85% accuracy</strong>.</li>
+		</ul>
 		<div class="proj-metrics">
 			<span class="proj-metric">85% accuracy</span>
-			<span class="proj-metric">150+ hours broadcast data</span>
+			<span class="proj-metric">150+ hours data</span>
 			<span class="proj-metric">Ensemble modeling</span>
-		</div>
-		<div class="stack-row" style="margin-bottom:8px;">
-			<span class="chip">SVM</span><span class="chip">Random Forest</span><span class="chip">PCA</span><span class="chip">Lasso</span><span class="chip">GridSearchCV</span><span class="chip">KMeans</span>
 		</div>
 		<a class="proj-link" href="https://github.com/Akhila-Reddy1113/Data-Analyst-projects/tree/main/TV%20News%20Channel%20Commercial%20Detection" target="_blank"><i class="fab fa-github"></i> GitHub Repo</a>
 	</div>
@@ -342,38 +380,38 @@
 <!-- ─────────── CERTIFICATIONS ─────────── -->
 <article id="certifications" style="display:none;">
 	<h2 class="major">Certifications</h2>
-	<!-- Professional achievement / awards themed -->
+	<!-- Dark professional/achievement concept -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?w=900&auto=format&q=80" alt="Professional certifications and achievements">
+		<img src="https://images.unsplash.com/photo-1607798748738-b15c40d33d57?w=900&auto=format&q=75" alt="Professional certifications and technical achievement">
 	</span>
 
 	<a class="cert-card" href="https://www.credly.com/earner/earned/share/fc781221-5ba9-484e-8260-26fed6b72239" target="_blank">
-		<div class="cert-icon" style="background:rgba(66,133,244,.18);color:#4285f4;"><i class="fab fa-google"></i></div>
+		<div class="cert-icon" style="background:rgba(66,133,244,.18);color:#7eb3f7;"><i class="fab fa-google"></i></div>
 		<div><div class="cert-name">Google Data Analytics Professional Certificate</div><div class="cert-issuer">Google &nbsp;·&nbsp; Credly Verified</div></div>
 	</a>
 
 	<a class="cert-card" href="https://learn.microsoft.com/en-gb/users/akhilareddyg-0775/transcript/71pmkug381g4kqq" target="_blank">
-		<div class="cert-icon" style="background:rgba(0,120,212,.18);color:#0078d4;"><i class="fab fa-microsoft"></i></div>
+		<div class="cert-icon" style="background:rgba(0,120,212,.18);color:#6ab4f5;"><i class="fab fa-microsoft"></i></div>
 		<div><div class="cert-name">Microsoft Power BI Data Analyst Associate (PL-300)</div><div class="cert-issuer">Microsoft Certified</div></div>
 	</a>
 
 	<a class="cert-card" href="https://www.credly.com/org/alteryx/badge/alteryx-designer-core-certification" target="_blank">
-		<div class="cert-icon" style="background:rgba(0,174,239,.18);color:#00aeef;"><i class="fas fa-cogs"></i></div>
+		<div class="cert-icon" style="background:rgba(0,174,239,.18);color:#7ecac3;"><i class="fas fa-cogs"></i></div>
 		<div><div class="cert-name">Alteryx Designer Core Certification</div><div class="cert-issuer">Alteryx Certified</div></div>
 	</a>
 
 	<a class="cert-card" href="https://www.credly.com/earner/earned/badge/c68ea17d-af5a-414b-97ee-7af3cc59675d" target="_blank">
-		<div class="cert-icon" style="background:rgba(0,174,239,.18);color:#00aeef;"><i class="fas fa-cloud"></i></div>
+		<div class="cert-icon" style="background:rgba(0,174,239,.18);color:#7ecac3;"><i class="fas fa-cloud"></i></div>
 		<div><div class="cert-name">Alteryx Designer Cloud Core Certification</div><div class="cert-issuer">Alteryx Certified</div></div>
 	</a>
 
 	<a class="cert-card" href="https://www.credly.com/badges/1f249f87-fec3-431f-99a9-26287cbcd6e6/linked_in_profile" target="_blank">
-		<div class="cert-icon" style="background:rgba(224,68,0,.18);color:#e04400;"><i class="fas fa-chart-pie"></i></div>
+		<div class="cert-icon" style="background:rgba(224,68,0,.18);color:#e8956d;"><i class="fas fa-chart-pie"></i></div>
 		<div><div class="cert-name">Tableau Desktop Specialist</div><div class="cert-issuer">Tableau Certified</div></div>
 	</a>
 
 	<a class="cert-card" href="https://coursera.org/share/008e3befaeaf46c91dd4f0974b99118c" target="_blank">
-		<div class="cert-icon" style="background:rgba(45,156,219,.18);color:#2d9cdb;"><i class="fas fa-award"></i></div>
+		<div class="cert-icon" style="background:rgba(45,156,219,.18);color:#7ecac3;"><i class="fas fa-award"></i></div>
 		<div><div class="cert-name">Six Sigma Black Belt</div><div class="cert-issuer">Kennesaw State University / Coursera</div></div>
 	</a>
 
@@ -383,9 +421,9 @@
 <!-- ─────────── CONTACT ─────────── -->
 <article id="contact" style="display:none;">
 	<h2 class="major">Contact</h2>
-	<!-- Professional networking / connection themed -->
+	<!-- Dark city / professional connection themed -->
 	<span class="image main">
-		<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&auto=format&q=80" alt="Professional networking and connection">
+		<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&auto=format&q=75" alt="Professional office environment representing networking and connection">
 	</span>
 
 	<p class="contact-row"><i class="fas fa-map-marker-alt"></i>Dallas, TX &nbsp;·&nbsp; Open to relocation</p>
@@ -404,46 +442,37 @@
 
 </div><!-- end main -->
 
-<!-- ══════════════════ FOOTER ══════════════════ -->
 <footer id="footer">
-	<p style="font-size:.72em;color:#546e7a;">Akhila Reddy &nbsp;·&nbsp; Data Scientist &amp; Analytics Engineer &nbsp;·&nbsp; Dallas, TX</p>
+	<p style="font-size:.7em;opacity:.4;">Akhila Reddy &nbsp;·&nbsp; Data Scientist &amp; Analytics Engineer &nbsp;·&nbsp; Dallas, TX</p>
 </footer>
-
 </div><!-- end wrapper -->
-<div id="bg"></div>
 
-<!-- Scripts — keep your existing assets untouched -->
+<div id="bg"></div>
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
-
 <script>
-/* Animate skill bars when Skills article becomes visible */
 (function(){
-  var art = document.getElementById('skills');
-  if(!art) return;
-  var fired = false;
-  var run = function(){
-    if(fired) return;
-    fired = true;
-    document.querySelectorAll('.skill-fill').forEach(function(el){
-      el.style.width = (el.dataset.w || 0) + '%';
-    });
-  };
-  /* MutationObserver watches for display change */
-  new MutationObserver(function(muts){
-    muts.forEach(function(m){
-      if(m.type === 'attributes' && art.style.display !== 'none') run();
-    });
-  }).observe(art, {attributes:true, attributeFilter:['style']});
-  /* Fallback: click on Skills nav link */
-  document.querySelectorAll('a[href="#skills"]').forEach(function(a){
-    a.addEventListener('click', function(){ setTimeout(run, 350); });
-  });
+	var art = document.getElementById('skills');
+	if(!art) return;
+	var fired = false;
+	function runBars(){
+		if(fired) return; fired = true;
+		document.querySelectorAll('.skill-fill').forEach(function(el){
+			el.style.width = (el.dataset.w||0)+'%';
+		});
+	}
+	new MutationObserver(function(muts){
+		muts.forEach(function(m){
+			if(m.type==='attributes' && art.style.display!=='none') runBars();
+		});
+	}).observe(art,{attributes:true,attributeFilter:['style']});
+	document.querySelectorAll('a[href="#skills"]').forEach(function(a){
+		a.addEventListener('click',function(){ setTimeout(runBars,350); });
+	});
 })();
 </script>
-
 </body>
 </html>
